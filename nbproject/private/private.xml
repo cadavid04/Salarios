@@ -4,11 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/itmanager/NetBeansProjects/Salarios/src/java/CDI/SalarioValidator.java</file>
-            <file>file:/Users/itmanager/NetBeansProjects/Salarios/web/process.xhtml</file>
             <file>file:/Users/itmanager/NetBeansProjects/Salarios/src/java/CDI/RelexedSalarioValidator.java</file>
             <file>file:/Users/itmanager/NetBeansProjects/Salarios/src/java/CDI/SalarioProcessor.java</file>
             <file>file:/Users/itmanager/NetBeansProjects/Salarios/src/java/CDI/SalarioDAO.java</file>
-            <file>file:/Users/itmanager/NetBeansProjects/Salarios/web/WEB-INF/beans.xml</file>
             <file>file:/Users/itmanager/NetBeansProjects/Salarios/src/java/CDI/DefaultSalarioValidator.java</file>
             <file>file:/Users/itmanager/NetBeansProjects/Salarios/src/java/CDI/Salario.java</file>
             <file>file:/Users/itmanager/NetBeansProjects/Salarios/src/java/CDI/SalarioErrorReporter.java</file>

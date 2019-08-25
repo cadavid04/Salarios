@@ -13,15 +13,16 @@ import java.util.List;
  * @author itmanager
  */
 public class DefaultSalarioDAO implements SalarioDAO{
-    List <Salario> results = new ArrayList<Salario>();
+    List <Salario> results = new ArrayList<>();
+   
     
     @Override
     public List<Salario> fetchSalarios() {
     return results;
 }
     @Override
-    public void ingresarSalario(int salario, String nombre, int horasExtras, int valorHorasExrtras, int comision) {
-    results.add(new Salario(salario, nombre,  horasExtras,  valorHorasExrtras,  comision));
+    public void ingresarSalario(int salario, String nombre, int horasExtras, int valorHorasExtras, int comision) {
+    results.add(new Salario(salario, nombre,  horasExtras,  valorHorasExtras,  comision));
     }
     
 }

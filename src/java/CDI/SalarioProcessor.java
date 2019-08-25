@@ -49,13 +49,15 @@ public class SalarioProcessor {
     
     public void ingresar (int salario, String nombre, int horasExtras, int valorHorasExrtras, int comision){
         salarioDAO.ingresarSalario(salario, nombre, horasExtras, valorHorasExrtras, comision);
-        System.out.println("Salario Ingresado correctamente: "+ " \n"
-                +"Nombre: " + nombre + " \n"+
-                "Salario Base: " + salario + " \n"+
-                "Horas extras: " + horasExtras + " \n"+
-                "valor horas extras: " + valorHorasExrtras + " \n"+
-                "Comision: " + comision + " \n" 
-                );
+       // System.out.println("Salario Ingresado correctamente: "+ " \n"
+               // +"Nombre: " + nombre + " \n"+
+               // "Salario Base: " + salario + " \n"+
+               // "Horas extras: " + horasExtras + " \n"+
+                //"valor horas extras: " + valorHorasExrtras + " \n"+
+                //"Comision: " + comision + " \n" 
+                //);
+                
+                System.out.println(salarioDAO.fetchSalarios());
         
         
         
