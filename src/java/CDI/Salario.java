@@ -5,31 +5,66 @@
  */
 package CDI;
 
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author itmanager
  */
-public class Salario {
-    private int salario;
-    private String nombre;
-    private int horasExtras;
-    private int valorHorasExrtras;
-    private int comision;
+@Entity
+@Table(name = "Salario")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Salario.findAll", query = "SELECT s FROM Salario s")
+    , @NamedQuery(name = "Salario.findBySalario", query = "SELECT s FROM Salario s WHERE s.salario = :salario")
+    , @NamedQuery(name = "Salario.findByNombre", query = "SELECT s FROM Salario s WHERE s.nombre = :nombre")
+    , @NamedQuery(name = "Salario.findByHorasExtras", query = "SELECT s FROM Salario s WHERE s.horasExtras = :horasExtras")
+    , @NamedQuery(name = "Salario.findByValorHorasExrtras", query = "SELECT s FROM Salario s WHERE s.valorHorasExrtras = :valorHorasExrtras")
+    , @NamedQuery(name = "Salario.findByComision", query = "SELECT s FROM Salario s WHERE s.comision = :comision")
+    , @NamedQuery(name = "Salario.findByPk", query = "SELECT s FROM Salario s WHERE s.pk = :pk")})
+public class Salario implements Serializable {
 
-    public int getSalario() {
+    private static final long serialVersionUID = 1L;
+    @Column(name = "salario")
+    private Integer salario;
+    @Size(max = 15)
+    @Column(name = "nombre")
+    private String nombre;
+    @Column(name = "horasExtras")
+    private Integer horasExtras;
+    @Column(name = "valorHorasExrtras")
+    private Integer valorHorasExrtras;
+    @Column(name = "comision")
+    private Integer comision;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "pk")
+    private Integer pk;
+
+    public Salario() {
+    }
+
+    public Salario(Integer pk) {
+        this.pk = pk;
+    }
+
+    public Integer getSalario() {
         return salario;
     }
 
-    public void setSalario(int salario) {
+    public void setSalario(Integer salario) {
         this.salario = salario;
-    }
-
-    public Salario(int salario, String nombre, int horasExtras, int valorHorasExrtras, int comision) {
-        this.salario = salario;
-        this.nombre = nombre;
-        this.horasExtras = horasExtras;
-        this.valorHorasExrtras = valorHorasExrtras;
-        this.comision = comision;
     }
 
     public String getNombre() {
@@ -40,34 +75,61 @@ public class Salario {
         this.nombre = nombre;
     }
 
-    public int getHorasExtras() {
+    public Integer getHorasExtras() {
         return horasExtras;
     }
 
-    public void setHorasExtras(int horasExtras) {
+    public void setHorasExtras(Integer horasExtras) {
         this.horasExtras = horasExtras;
     }
 
-    public int getValorHorasExrtras() {
+    public Integer getValorHorasExrtras() {
         return valorHorasExrtras;
     }
 
-    public void setValorHorasExrtras(int valorHorasExrtras) {
+    public void setValorHorasExrtras(Integer valorHorasExrtras) {
         this.valorHorasExrtras = valorHorasExrtras;
     }
 
-    public int getComision() {
+    public Integer getComision() {
         return comision;
     }
 
-    public void setComision(int comision) {
+    public void setComision(Integer comision) {
         this.comision = comision;
+    }
+
+    public Integer getPk() {
+        return pk;
+    }
+
+    public void setPk(Integer pk) {
+        this.pk = pk;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (pk != null ? pk.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Salario)) {
+            return false;
+        }
+        Salario other = (Salario) object;
+        if ((this.pk == null && other.pk != null) || (this.pk != null && !this.pk.equals(other.pk))) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String toString() {
-        return "Salario{" + "salario=" + salario + ", nombre=" + nombre + ", horasExtras=" + horasExtras + ", valorHorasExrtras=" + valorHorasExrtras + ", comision=" + comision + '}';
+        return "CDI.Salario[ pk=" + pk + " ]";
     }
-    
     
 }

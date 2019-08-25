@@ -8,21 +8,27 @@ package CDI;
 import java.util.ArrayList;
 import java.util.List;
 
+import managedBeans.SalarioMBean;
+
+
 /**
  *
  * @author itmanager
  */
+
 public class DefaultSalarioDAO implements SalarioDAO{
-    List <Salario> results = new ArrayList<>();
    
+   
+    SalarioMBean salarioMbean = new SalarioMBean(); 
     
     @Override
     public List<Salario> fetchSalarios() {
+    List <Salario> results = salarioMbean.fetchSalarios();
     return results;
 }
     @Override
     public void ingresarSalario(int salario, String nombre, int horasExtras, int valorHorasExtras, int comision) {
-    results.add(new Salario(salario, nombre,  horasExtras,  valorHorasExtras,  comision));
+    
     }
     
 }
