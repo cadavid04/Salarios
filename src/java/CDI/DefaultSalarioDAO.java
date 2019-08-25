@@ -13,7 +13,8 @@ import java.util.List;
  * @author itmanager
  */
 public class DefaultSalarioDAO implements SalarioDAO{
-    List <Salario> results = new ArrayList<>();
+    
+    private static List <Salario> results = new ArrayList<Salario>();
    
     
     @Override
